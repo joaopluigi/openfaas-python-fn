@@ -4,6 +4,7 @@ import json
 
 
 def handle(req):
+
     try:
 
         # Return var
@@ -21,7 +22,7 @@ def handle(req):
             f.write(str(json_req['log']))
 
             # Set return message
-            ret = {'message': 'log updated!'}
+            ret = {'message': 'ok'}
 
         else:
 
@@ -29,7 +30,7 @@ def handle(req):
             f = open('pi.log', 'r')
 
             # Get log file string
-            ret = {'log': f.read()}
+            ret = {'message': 'ok', 'log': f.read()}
 
         # Close file
         f.close()
@@ -40,4 +41,4 @@ def handle(req):
     except:
 
         # Return error
-        print "Unexpected error:", sys.exc_info()[0]
+        print 'message:', sys.exc_info()[0]
