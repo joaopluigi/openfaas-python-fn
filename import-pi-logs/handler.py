@@ -6,13 +6,13 @@ import json
 def handle(req):
     try:
 
-        # Open log file
-        f = open('pi.log', 'w+')
-
         # Return var
         ret = {}
 
         if os.getenv('Http_Method') == 'POST':
+
+            # Open log file for write
+            f = open('pi.log', 'w')
 
             # Parse request data
             json_req = json.loads(req)
@@ -21,9 +21,12 @@ def handle(req):
             f.write(str(json_req['log']))
 
             # Set return message
-            ret = {'message': 'Log updated!'}
+            ret = {'message': 'log updated!'}
 
         else:
+
+            # Open log file for read
+            f = open('pi.log', 'r')
 
             # Get log file string
             ret = {'log': f.read()}
