@@ -7,7 +7,7 @@ def handle(req):
     try:
 
         # Open log file
-        f = open('pi.log', 'r+')
+        f = open('pi.log', 'w+')
 
         # Return var
         ret = {}
@@ -27,7 +27,9 @@ def handle(req):
 
             # Get log file string
             ret = {'log': f.read()}
-            
+
+        # Close file
+        f.close()
 
         # Return object
         print json.dumps(ret)
