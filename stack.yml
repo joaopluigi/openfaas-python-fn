@@ -7,3 +7,7 @@ functions:
     lang: python3
     handler: ./helloworld
     image: joaopluigi/helloworld:latest
+  helloworld2:
+    lang: python
+    handler: ./helloworld2
+    image: joaopluigi/helloworld2:latest
