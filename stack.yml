@@ -3,11 +3,7 @@ provider:
   gateway: http://127.0.0.1:8080
 
 functions:
-  helloworld:
-    lang: python3
-    handler: ./helloworld
-    image: joaopluigi/helloworld:latest
-  helloworld2:
+  import-pi-logs:
     lang: python
-    handler: ./helloworld2
-    image: joaopluigi/helloworld2:latest
+    handler: ./import-pi-logs
+    image: joaopluigi/import-pi-logs:latest

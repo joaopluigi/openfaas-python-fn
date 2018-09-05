@@ -1,2 +1,3 @@
-# openfaas-python-fn
-OpenFaaS Python function
+# OpenFaaS Python function
+
+Testing OpenFaaS Cloud!
