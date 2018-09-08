@@ -24,19 +24,28 @@ def handle(req):
             # Set return message
             ret = {'message': 'ok'}
 
+            # parse to JSON
+            ret = json.dumps(ret)
+
         else:
 
             # Open log file for read
             f = open('pi.log', 'r')
 
-            # Get log file string
-            ret = {'message': 'ok', 'log': f.read()}
+            # Replace \n with <br> tag
+            logs = (f.read()).replace('\n', '<br>')
+
+            # Add HTML template
+            logs = '<html><head></head><body>{0}</body></html>'.format(logs)
+
+            # Set to return object
+            ret = logs
 
         # Close file
         f.close()
 
         # Return object
-        print json.dumps(ret)
+        print ret
 
     except:
 
