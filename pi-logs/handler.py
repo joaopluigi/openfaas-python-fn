@@ -5,10 +5,10 @@ import json
 
 def handle(req):
 
-    try:
+    # Return object
+    ret = {}
 
-        # Return var
-        ret = {}
+    try:
 
         if os.getenv('Http_Method') == 'POST':
 
@@ -32,22 +32,36 @@ def handle(req):
             # Open log file for read
             f = open('pi.log', 'r')
 
-            # Replace \n with <br> tag
-            logs = (f.read()).replace('\n', '<br>')
+            try:
 
-            # Add HTML template
-            logs = '<html><head></head><body>{0}</body></html>'.format(logs)
+                # Replace \n with <br> tag
+                logs = (f.read()).replace('\n', '<br>')
 
-            # Set to return object
-            ret = logs
+                # Add HTML template
+                logs = '<html><head></head><body>{0}</body></html>'.format(
+                    logs)
+
+                # Add logs to return object
+                ret = logs
+
+            except:
+
+                # Set error message
+                ret = {'message': 'could not get logs'}
+
+                # parse to JSON
+                ret = json.dumps(ret)
 
         # Close file
         f.close()
 
-        # Return object
-        print ret
-
     except:
 
-        # Return error
-        print 'message:', sys.exc_info()[0]
+        # Set error message
+        ret = {'message': sys.exc_info()[0]}
+
+        # parse to JSON
+        ret = json.dumps(ret)
+
+    # Return object
+    print ret
