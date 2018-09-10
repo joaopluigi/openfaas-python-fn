@@ -13,7 +13,7 @@ def handle(req):
         if os.getenv('Http_Method') == 'POST':
 
             # Open log file for write
-            f = open('pi.log', 'w')
+            f = open('/tmp/pi.log', 'w')
 
             # Parse request data
             json_req = json.loads(req)
@@ -30,7 +30,7 @@ def handle(req):
         else:
 
             # Open log file for read
-            f = open('pi.log', 'r')
+            f = open('/tmp/pi.log', 'r')
 
             # Replace \n with <br> tag
             logs = (f.read()).replace('\n', '<br>')
