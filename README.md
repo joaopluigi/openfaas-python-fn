@@ -1,3 +1,3 @@
 # OpenFaaS Python function
 
-Testing OpenFaaS Cloud!
+POST/GET RPi logs 
