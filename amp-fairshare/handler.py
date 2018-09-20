@@ -10,7 +10,7 @@ def handle(req):
 
     try:
 
-        with open(os.path.dirname(__file__) + '/index.html') as f:
+        with open(os.path.dirname(__file__) + '/dist/index.html') as f:
             ret = f.read()
 
     except:
