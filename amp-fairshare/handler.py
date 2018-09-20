@@ -10,7 +10,7 @@ AMP_WEBSITE = """
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <title>FairShare</title>
   <!-- <link rel="manifest" href="/manifest.json"> -->
-  <link rel="canonical" href="http://yara-workshop-joaoebruno-stage.s3-website-us-east-1.amazonaws.com/">
+  <link rel="canonical" href="https://joaopluigi.o6s.io/amp-fairshare">
   <link href="https://fonts.gstatic.com" rel="dns-prefetch preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
