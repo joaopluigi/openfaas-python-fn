@@ -10,8 +10,12 @@ def handle(req):
 
     try:
 
-        with open(os.path.dirname(__file__) + '/dist/index.html') as f:
-            ret = f.read()
+        bytes = None
+
+        with open('./function/dist/index.html') as f:
+            bytes = f.read()
+        
+        ret = str(bytes)
 
     except:
 

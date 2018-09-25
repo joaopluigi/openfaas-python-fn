@@ -7,6 +7,8 @@ functions:
     lang: python
     handler: ./amp-fairshare
     image: joaopluigi/amp-fairshare:latest
+    environment:
+      content_type: text/html
   pi-logs:
     lang: python
     handler: ./pi-logs
